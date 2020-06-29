@@ -12,18 +12,33 @@ class SensorsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var SensorsTableView: UITableView!
     var listOfSensors = [Sensor]()
-    //var StationID = ""
+    // zmiena która przyjmie dane z VC
+    var station: Station?
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let url = "http://api.gios.gov.pl/pjp-api/rest/data/getData/92"
-        //let url = "http://api.gios.gov.pl/pjp-api/rest/station/findAll"
-        let url = "http://api.gios.gov.pl/pjp-api/rest/station/sensors/114"
-        LoadSensors(url:url)
-        
         SensorsTableView.delegate = self
         SensorsTableView.dataSource = self
+        
+        
+        
+        if let safeIdStation = station?.id {
+            let url = "http://api.gios.gov.pl/pjp-api/rest/station/sensors/\(safeIdStation)"
+            LoadSensors(url:url)
+            print("station id: ",safeIdStation)
+        } else {
+
+        print("station null error")
+
+        }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SensorIdSegue"{
+            let destVC = segue.destination as! SensorDataViewController
+            destVC.sensor = sender as? Sensor
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,7 +50,9 @@ class SensorsViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(listOfSensors[indexPath.row].id!)
+        //print(listOfSensors[indexPath.row].id!)
+        let sensorid = listOfSensors[indexPath.row]
+        performSegue(withIdentifier: "SensorIdSegue", sender: sensorid)
     }
     
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,21 +82,15 @@ class SensorsViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             for sensor in sensors {
              
-             print("--")
-                /*if let ids = sensor["stationId"] as? Int{
-                    print("działa", ids)
-                }*/
-                
+             //print("--")
                 if let ids = sensor["id"] as? Int,
                 let param = sensor["param"] as? [String:Any],
                 let paramName = param["paramName"] as? String,
                 let form = param["paramFormula"] as? String{
                     self.listOfSensors.append(Sensor(name: paramName, id: ids, form: form))
-                    print("tak", paramName, form)
+                    //print("tak", paramName, form)
                 }
                 
-               // self.listOfSensors.append(Sensor(name: paramName, id: ids, form: form))
-             
             DispatchQueue.main.async {
                 self.SensorsTableView.reloadData()
                 }

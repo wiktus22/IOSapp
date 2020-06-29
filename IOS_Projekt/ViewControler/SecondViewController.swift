@@ -12,7 +12,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var TableViewStations: UITableView!
     var listOfStations = [Station]()
-    //var StationID = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = "http://api.gios.gov.pl/pjp-api/rest/station/findAll"
@@ -21,6 +21,46 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         TableViewStations.delegate = self
         TableViewStations.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func ButtonAdd(_ sender: UIButton) {
+        
+        guard let cell = sender.superview?.superview as? UITableViewCell else {
+            return
+        }
+        
+        guard let indexPath = TableViewStations.indexPath(for: cell) else {
+            return
+        }
+        
+        guard let id = listOfStations[indexPath.row].id else {
+            return
+        }
+        
+        guard let name = listOfStations[indexPath.row].name else {
+            return
+        }
+        
+        // create the alert
+        let alert = UIAlertController(title: "Favorites", message: "Would you like to add this station to Favorites", preferredStyle: UIAlertController.Style.alert)
+
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.cancel, handler: { action in
+        print("Dodaj do ulubionych", id, name)
+                
+        }))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    //Funkcja wywołująca przekazanie danych
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StationIdSegue" {
+            let destVC = segue.destination as! SensorsViewController
+            destVC.station = sender as? Station
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,8 +72,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(listOfStations[indexPath.row].id!)
-        //StationID = listOfStations[indexPath.row].id!
+        let stationid = listOfStations[indexPath.row]
+        performSegue(withIdentifier: "StationIdSegue", sender: stationid)
+        
     }
     
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,22 +105,22 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             for station in stations {
              
-             print("--")
+             //print("--")
              
              if let name = station["stationName"] as? String,
               let id = station["id"] as? Int {
               
-              print("Stacja", id, name)
+              //print("Stacja", id, name)
               self.listOfStations.append(Station(name: name, id: id))
             
               
              }
-             
+             //Narazie nie używane przyda sie do wyszukiwarki
              if let city = station["city"] as? [String:Any],
               let name = city["name"] as? String,
               let id = city["id"] as? Int {
 
-              print("Miasto", id, name)
+              //print("Miasto", id, name)
 
              }
             DispatchQueue.main.async {

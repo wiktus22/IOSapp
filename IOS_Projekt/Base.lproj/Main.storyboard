@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="1689" y="-365"/>
         </scene>
         <!--Stations-->
         <scene sceneID="wg7-f3-ORb">
@@ -60,7 +60,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Station Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tl-q0-QPs">
-                                                    <rect key="frame" x="76" y="7" width="215" height="36"/>
+                                                    <rect key="frame" x="76" y="7" width="214" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -74,7 +74,7 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23" scale="large" weight="regular"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="LWm-4B-sKn" kind="show" identifier="FavSegue" id="XVj-iD-CbE"/>
+                                                        <action selector="ButtonAdd:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="QQ4-NG-Vet"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -85,7 +85,6 @@
                                         <connections>
                                             <outlet property="ID" destination="qNj-Yf-qGR" id="RUP-7r-KXo"/>
                                             <outlet property="StationName" destination="4Tl-q0-QPs" id="gyo-2e-7rq"/>
-                                            <segue destination="bz1-wZ-CDC" kind="show" identifier="StationIdSegue" id="bNt-HN-hjM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -97,6 +96,7 @@
                     <navigationItem key="navigationItem" title="Stations" id="TJk-kD-0UR"/>
                     <connections>
                         <outlet property="TableViewStations" destination="QSd-hA-iXK" id="ZXu-1L-MRk"/>
+                        <segue destination="bz1-wZ-CDC" kind="show" identifier="StationIdSegue" id="9Wt-eM-nEK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -153,7 +153,6 @@
                                             <outlet property="Form" destination="taK-fJ-fzV" id="Q92-A0-eBt"/>
                                             <outlet property="IDSensor" destination="zkX-9D-RAp" id="VWP-Gq-GpD"/>
                                             <outlet property="ParamName" destination="S2P-cD-P3s" id="2q3-HQ-pwk"/>
-                                            <segue destination="IbW-j9-plA" kind="show" identifier="SensorIdSegue" id="xx9-8Z-6nH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -165,11 +164,12 @@
                     <navigationItem key="navigationItem" id="Chv-3a-lQL"/>
                     <connections>
                         <outlet property="SensorsTableView" destination="Y8O-fJ-5wZ" id="3g8-Ef-aRa"/>
+                        <segue destination="IbW-j9-plA" kind="show" identifier="SensorIdSegue" id="dru-cj-xZv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJO-AI-cBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3548" y="333"/>
+            <point key="canvasLocation" x="2588" y="333"/>
         </scene>
         <!--Sensor Data View Controller-->
         <scene sceneID="Ktc-mw-xfL">
@@ -192,14 +192,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s21-G1-555">
-                                                    <rect key="frame" x="8" y="11" width="184" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="183" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcp-hL-aaR">
-                                                    <rect key="frame" x="200" y="10" width="160" height="21"/>
+                                                    <rect key="frame" x="199" y="10" width="161" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olj-xS-bfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4391" y="332"/>
+            <point key="canvasLocation" x="3463" y="331"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -238,6 +238,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="xiF-0H-Q3x" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="CMA-cc-hAr" kind="relationship" relationship="viewControllers" id="mTq-om-YrW"/>
                         <segue destination="Som-FY-faL" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="N5j-U1-B5K" kind="relationship" relationship="viewControllers" id="TSH-JJ-g5k"/>
                     </connections>
@@ -269,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRL-G9-qTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="1005"/>
+            <point key="canvasLocation" x="750" y="2130"/>
         </scene>
         <!--Stations-->
         <scene sceneID="ECn-8v-35L">
@@ -307,7 +308,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvB-H4-Kl7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-321"/>
+            <point key="canvasLocation" x="750" y="-364"/>
         </scene>
         <!--About-->
         <scene sceneID="Ybb-Qm-Pzu">
@@ -326,18 +327,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9c0-e3-EdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1005"/>
+            <point key="canvasLocation" x="750" y="1269"/>
         </scene>
-        <!--View Controller-->
+        <!--Fav View Controller-->
         <scene sceneID="oZP-8r-Veq">
             <objects>
-                <viewController id="LWm-4B-sKn" sceneMemberID="viewController">
+                <viewController id="LWm-4B-sKn" customClass="FavViewController" customModule="IOS_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pyP-6b-vdc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adding to favorites coming soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mB-HZ-3zq">
-                                <rect key="frame" x="64" y="65" width="247" height="533"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your favorites coming soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mB-HZ-3zq">
+                                <rect key="frame" x="27" y="40" width="318" height="588"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -351,7 +352,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lh9-2f-Alu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3548" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="-226" y="2130"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="1C7-vq-qhZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CMA-cc-hAr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="50m-uz-GmD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SnR-Ja-w6r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LWm-4B-sKn" kind="relationship" relationship="rootViewController" id="PV7-Ih-AtA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJQ-wO-kXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="1269"/>
         </scene>
     </scenes>
     <resources>
@@ -359,5 +379,6 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="paperplane.fill" catalog="system" width="128" height="121"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

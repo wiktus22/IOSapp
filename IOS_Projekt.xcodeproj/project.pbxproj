@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74C789DA24AA26FB00FDF430 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C789D924AA26FB00FDF430 /* FavViewController.swift */; };
 		74D784CE24A40C4600F78ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D784CD24A40C4600F78ACF /* AppDelegate.swift */; };
 		74D784D024A40C4600F78ACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D784CF24A40C4600F78ACF /* SceneDelegate.swift */; };
 		74D784D224A40C4600F78ACF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D784D124A40C4600F78ACF /* FirstViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74C789D924AA26FB00FDF430 /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
 		74D784CA24A40C4600F78ACF /* IOS_Projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_Projekt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D784CD24A40C4600F78ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D784CF24A40C4600F78ACF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		74D784F024A426CC00F78ACF /* ViewControler */ = {
 			isa = PBXGroup;
 			children = (
+				74C789D924AA26FB00FDF430 /* FavViewController.swift */,
 				74D784D124A40C4600F78ACF /* FirstViewController.swift */,
 				74D784D324A40C4600F78ACF /* SecondViewController.swift */,
 				74D784EB24A4181700F78ACF /* AboutViewController.swift */,
@@ -202,6 +205,7 @@
 			files = (
 				74D784F824A42D5600F78ACF /* SensorsViewController.swift in Sources */,
 				74D784EA24A4131000F78ACF /* TVCStations.swift in Sources */,
+				74C789DA24AA26FB00FDF430 /* FavViewController.swift in Sources */,
 				74D784FB24A4383000F78ACF /* SensorDataViewController.swift in Sources */,
 				74D784D424A40C4600F78ACF /* SecondViewController.swift in Sources */,
 				74D784E424A40DBA00F78ACF /* Station.swift in Sources */,

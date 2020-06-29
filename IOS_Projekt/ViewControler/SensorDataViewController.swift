@@ -13,10 +13,21 @@ class SensorDataViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var SensorsDataTableView: UITableView!
     var listOfSensorsData = [SensorData]()
+    var sensor: Sensor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = "http://api.gios.gov.pl/pjp-api/rest/data/getData/92"
-        LoadSensorsData(url:url)
+        
+        if let safeIdSensor = sensor?.id{
+            let url = "http://api.gios.gov.pl/pjp-api/rest/data/getData/\(safeIdSensor)"
+            LoadSensorsData(url:url)
+            print("sensor id: ",safeIdSensor)
+        }else{
+            print("sensor null error")
+        }
+        
+        /*let url = "http://api.gios.gov.pl/pjp-api/rest/data/getData/92"
+        LoadSensorsData(url:url)*/
 
         SensorsDataTableView.delegate = self
         SensorsDataTableView.dataSource = self
@@ -31,9 +42,9 @@ class SensorDataViewController: UIViewController, UITableViewDelegate, UITableVi
         return listOfSensorsData.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(listOfSensorsData[indexPath.row].id!)
-    }
+    }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let SensorDataRecord:TVCSensorsData = (tableView.dequeueReusableCell(withIdentifier: "SensorDataRecord", for: indexPath) as! TVCSensorsData)
@@ -71,15 +82,6 @@ class SensorDataViewController: UIViewController, UITableViewDelegate, UITableVi
         self.listOfSensorsData.append(SensorData(date: date, value: value))
        }
       }
-      
-      /*if let ids = sensor["id"] as? Int,
-      let param = sensor["param"] as? [String:Any],
-      let paramName = param["paramName"] as? String,
-      let form = param["paramFormula"] as? String{
-      self.listOfSensors.append(Sensor(name: paramName, id: ids, form: form))
-      print("tak", paramName, form)
-      }*/
-      
       
       DispatchQueue.main.async {
        self.SensorsDataTableView.reloadData()
