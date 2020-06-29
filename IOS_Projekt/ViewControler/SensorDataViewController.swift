@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+
 
 class SensorDataViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,6 +19,8 @@ class SensorDataViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = sensor?.form
         
         if let safeIdSensor = sensor?.id{
             let url = "http://api.gios.gov.pl/pjp-api/rest/data/getData/\(safeIdSensor)"

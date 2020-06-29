@@ -16,6 +16,9 @@ class SensorsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var station: Station?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = station?.name
+        
         SensorsTableView.delegate = self
         SensorsTableView.dataSource = self
         

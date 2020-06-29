@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Foundation
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var TableViewStations: UITableView!
     var listOfStations = [Station]()
+    
+    var listofFav = [Fav]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +51,16 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.cancel, handler: { action in
         print("Dodaj do ulubionych", id, name)
+            
+        self.listofFav.append(Fav(json: ["id": id,"name": name]))
+            
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: self.listofFav)
+        UserDefaults.standard.set(encodedData,forKey: "favo")
+            
                 
         }))
+        
+        
 
         // show the alert
         self.present(alert, animated: true, completion: nil)
