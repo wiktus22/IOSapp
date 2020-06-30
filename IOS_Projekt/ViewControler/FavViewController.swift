@@ -77,7 +77,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
       return
      }
         // create the alert
-    let alert = UIAlertController(title: "Favorites", message: "Would you like to add this station to Favorites", preferredStyle: UIAlertController.Style.alert)
+    let alert = UIAlertController(title: "Favorites", message: "Would you like remove this station from Favorites", preferredStyle: UIAlertController.Style.alert)
         
         // add the actions (buttons)
     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
