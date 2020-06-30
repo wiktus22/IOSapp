@@ -1,9 +1,7 @@
+//  IOS_Projekt Jakość powietrza
+//  Politechnika Śląska 2020
 //
-//  FavViewController.swift
-//  IOS_Projekt
-//
-//  Created by Wiktor Zawadzki on 29/06/2020.
-//  Copyright © 2020 Wiktor Zawadzki. All rights reserved.
+//  Copyright © 2020 Maksymilian Wojciech, Wiktor Zawadzki. All rights reserved.
 //
 
 import UIKit
@@ -11,60 +9,90 @@ import UIKit
 class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var TVStationsFav: UITableView!
-    var listOfFav = [Station]()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         TVStationsFav.delegate = self
         TVStationsFav.dataSource = self
-        
-        //listOfFav.append(Station(name: "dupa",id: 12))
-        
-        let decodedData = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "favo") as! Data) as! [Fav]
-        print("\(decodedData[0].favID)\(decodedData[0].favName)")
-        
-        var lenght = decodedData.count
-        var count = 0
-        
-        if lenght>=count {
-            self.listOfFav.append(Station(name: decodedData[count].favName!, id: decodedData[count].favID!))
-            count+=1
-            
-        }
-        
-        
-        // Do any additional setup after loading the view.
-        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+        TVStationsFav.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FavStation"{
+            let destVC = segue.destination as! SensorsViewController
+            destVC.station = sender as? Station
+        }
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+            if Defaults.listofFav.count > 0{
+                tableView.backgroundView = nil
+                return 1
+                
+            }else{
+                let noDataLabel: UILabel = UILabel()
+                noDataLabel.text = "No favorites yet? Add some in stations section."
+                noDataLabel.textAlignment = NSTextAlignment.center
+                tableView.backgroundView = noDataLabel
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+                return 0
+            }
+                
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfFav.count
+		return Defaults.listofFav.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let stationid = listOfFav[indexPath.row]
-        //performSegue(withIdentifier: "StationIdSegue", sender: stationid)
-        
+        let stationid = Defaults.listofFav[indexPath.row]
+        performSegue(withIdentifier: "FavStation", sender: stationid)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let FavStation:TVCFavorites = (tableView.dequeueReusableCell(withIdentifier: "FavStation", for: indexPath) as! TVCFavorites)
-        FavStation.setStationFav(station: listOfFav[indexPath.row])
+        FavStation.setStationFav(station: Defaults.listofFav[indexPath.row])
         return FavStation
     }
+    
+    
+    
+    @IBAction func FavRemove(_ sender: Any) {
+     
+     guard let button = sender as? UIButton else {
+      return
+     }
+     
+     guard let cell = button.superview?.superview as? UITableViewCell else {
+      return
+     }
+     
+     guard let indexPath = TVStationsFav.indexPath(for: cell) else {
+      return
+     }
+        // create the alert
+    let alert = UIAlertController(title: "Favorites", message: "Would you like to add this station to Favorites", preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+    alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.cancel, handler: { action in
+    Defaults.listofFav.remove(at: indexPath.row)
+    print("usunieto")
+        self.TVStationsFav.reloadData()
+        
+            
+    }))
+        
+        // show the alert
+    self.present(alert, animated: true, completion: nil)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+     TVStationsFav.reloadData()
     }
-    */
 
 }

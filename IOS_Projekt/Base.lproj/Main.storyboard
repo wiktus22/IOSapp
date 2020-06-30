@@ -16,9 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In our app you can check air quality in many polish city just select the station and parametr you want to check." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="16" y="300" width="336" height="76"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
+                                <rect key="frame" x="16" y="44" width="343" height="574"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <string key="text">In our app you can check air quality in many polish city just select the station and parametr you want to check. You can also add some stations to your favorites.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -30,7 +31,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="-365"/>
+            <point key="canvasLocation" x="1688.8" y="-365.66716641679164"/>
         </scene>
         <!--Stations-->
         <scene sceneID="wg7-f3-ORb">
@@ -91,6 +92,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Stations" id="TJk-kD-0UR"/>
@@ -101,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="331.48425787106447"/>
+            <point key="canvasLocation" x="1689" y="1110"/>
         </scene>
         <!--Sensors View Controller-->
         <scene sceneID="p5s-h3-QTT">
@@ -169,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJO-AI-cBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="333"/>
+            <point key="canvasLocation" x="2690" y="715"/>
         </scene>
         <!--Sensor Data View Controller-->
         <scene sceneID="Ktc-mw-xfL">
@@ -225,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olj-xS-bfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3463" y="331"/>
+            <point key="canvasLocation" x="3538" y="715"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -255,9 +257,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App made by Wiktor Zawadzki and Maksymilian Wojciech" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAE-Cz-DSY">
-                                <rect key="frame" x="16" y="163" width="343" height="137"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAE-Cz-DSY">
+                                <rect key="frame" x="16" y="44" width="343" height="574"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <string key="text">App made by Wiktor Zawadzki and Maksymilian Wojciech. App use free api: https://powietrze.gios.gov.pl/pjp/content/api. App was created for student project. To delete all stored data touch trash can. Politechnika Śląska 2020</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -266,11 +269,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="veH-00-yPR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="ps6-ef-eun"/>
+                    <navigationItem key="navigationItem" title="About" id="ps6-ef-eun">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="LEc-9T-iaB">
+                            <connections>
+                                <action selector="DeleteAll:" destination="hNr-Qu-9MD" id="5K2-A4-DhD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRL-G9-qTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="2130"/>
+            <point key="canvasLocation" x="-226.40000000000001" y="1915.5922038980511"/>
         </scene>
         <!--Stations-->
         <scene sceneID="ECn-8v-35L">
@@ -289,7 +298,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvw-V0-7mh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="333.28335832083962"/>
+            <point key="canvasLocation" x="750" y="1111"/>
         </scene>
         <!--Home-->
         <scene sceneID="QPz-yY-W95">
@@ -327,9 +336,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9c0-e3-EdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1269"/>
+            <point key="canvasLocation" x="-226" y="1112"/>
         </scene>
-        <!--Fav View Controller-->
+        <!--Favorites-->
         <scene sceneID="oZP-8r-Veq">
             <objects>
                 <viewController id="LWm-4B-sKn" customClass="FavViewController" customModule="IOS_Projekt" customModuleProvider="target" sceneMemberID="viewController">
@@ -342,20 +351,28 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavStation" rowHeight="48" id="OQD-18-fWy" customClass="TVCFavorites" customModule="IOS_Projekt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="48"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavStation" rowHeight="60" id="OQD-18-fWy" customClass="TVCFavorites" customModule="IOS_Projekt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OQD-18-fWy" id="f1T-yy-xwy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuP-EU-hpT">
-                                                    <rect key="frame" x="15" y="11" width="345" height="24"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7x-rN-if6">
+                                                    <rect key="frame" x="318" y="11" width="30" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="trash.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="FavRemove:" destination="LWm-4B-sKn" eventType="touchUpInside" id="wGE-2r-Izb"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -368,14 +385,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Gso-ig-ZJi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ITw-gY-2Bn"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="ITw-gY-2Bn"/>
                     <connections>
                         <outlet property="TVStationsFav" destination="3qW-ST-BBm" id="9Sf-Oh-kIe"/>
+                        <segue destination="bz1-wZ-CDC" kind="show" identifier="FavStation" id="o3n-RX-43N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lh9-2f-Alu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226.40000000000001" y="2129.6851574212897"/>
+            <point key="canvasLocation" x="1689" y="332"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="1C7-vq-qhZ">
@@ -394,14 +412,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJQ-wO-kXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226" y="1269"/>
+            <point key="canvasLocation" x="750" y="331"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Wt-eM-nEK"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="paperplane.fill" catalog="system" width="128" height="121"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
     </resources>
 </document>

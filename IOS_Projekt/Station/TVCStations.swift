@@ -1,11 +1,8 @@
+//  IOS_Projekt Jakość powietrza
+//  Politechnika Śląska 2020
 //
-//  TVCStations.swift
-//  IOS_Projekt
+//  Copyright © 2020 Maksymilian Wojciech, Wiktor Zawadzki. All rights reserved.
 //
-//  Created by Wiktor Zawadzki on 25/06/2020.
-//  Copyright © 2020 Wiktor Zawadzki. All rights reserved.
-//
-
 import UIKit
 
 class TVCStations: UITableViewCell {

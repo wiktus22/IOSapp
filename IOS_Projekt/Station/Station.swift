@@ -1,17 +1,15 @@
+//  IOS_Projekt Jakość powietrza
+//  Politechnika Śląska 2020
 //
-//  Station.swift
-//  IOS_Projekt
-//
-//  Created by Wiktor Zawadzki on 25/06/2020.
-//  Copyright © 2020 Wiktor Zawadzki. All rights reserved.
+//  Copyright © 2020 Maksymilian Wojciech, Wiktor Zawadzki. All rights reserved.
 //
 
 import UIKit
 
-class Station {
+class Station: Codable {
     
-    var name:String?
-    var id:Int?
+    var name: String?
+    var id: Int?
      
     init(name:String,id:Int) {
         self.name=name

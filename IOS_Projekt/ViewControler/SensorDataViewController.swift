@@ -1,9 +1,7 @@
+//  IOS_Projekt Jakość powietrza
+//  Politechnika Śląska 2020
 //
-//  SensorDataViewController.swift
-//  IOS_Projekt
-//
-//  Created by Wiktor Zawadzki on 25/06/2020.
-//  Copyright © 2020 Wiktor Zawadzki. All rights reserved.
+//  Copyright © 2020 Maksymilian Wojciech, Wiktor Zawadzki. All rights reserved.
 //
 
 import UIKit
@@ -29,17 +27,40 @@ class SensorDataViewController: UIViewController, UITableViewDelegate, UITableVi
         }else{
             print("sensor null error")
         }
-        
-        /*let url = "http://api.gios.gov.pl/pjp-api/rest/data/getData/92"
-        LoadSensorsData(url:url)*/
 
         SensorsDataTableView.delegate = self
         SensorsDataTableView.dataSource = self
-        // Do any additional setup after loading the view.
+
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+           if let safeIdSensor = sensor?.id{
+               let url = "http://api.gios.gov.pl/pjp-api/rest/data/getData/\(safeIdSensor)"
+               LoadSensorsData(url:url)
+               print("sensor id: ",safeIdSensor)
+           }else{
+               print("sensor null error")
+           }
+           
+        SensorsDataTableView.reloadData()
+       }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+            if listOfSensorsData.count > 0{
+                tableView.backgroundView = nil
+                return 1
+                
+            }else{
+                let noDataLabel: UILabel = UILabel()
+                noDataLabel.text = "No Data! Check your internet connection."
+                noDataLabel.textAlignment = NSTextAlignment.center
+                tableView.backgroundView = noDataLabel
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+                return 0
+            }
+                
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

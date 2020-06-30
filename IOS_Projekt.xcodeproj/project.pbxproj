@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01655F5E24AB0FAA003626A6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01655F5D24AB0FAA003626A6 /* Defaults.swift */; };
 		74C789DD24AA37E600FDF430 /* TVCFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C789DC24AA37E600FDF430 /* TVCFavorites.swift */; };
 		74C789DF24AA396F00FDF430 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C789DE24AA396F00FDF430 /* FavViewController.swift */; };
-		74C789E124AA84BF00FDF430 /* Fav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C789E024AA84BF00FDF430 /* Fav.swift */; };
 		74D784CE24A40C4600F78ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D784CD24A40C4600F78ACF /* AppDelegate.swift */; };
 		74D784D024A40C4600F78ACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D784CF24A40C4600F78ACF /* SceneDelegate.swift */; };
 		74D784D224A40C4600F78ACF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D784D124A40C4600F78ACF /* FirstViewController.swift */; };
@@ -29,9 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01655F5D24AB0FAA003626A6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		74C789DC24AA37E600FDF430 /* TVCFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCFavorites.swift; sourceTree = "<group>"; };
 		74C789DE24AA396F00FDF430 /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
-		74C789E024AA84BF00FDF430 /* Fav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fav.swift; sourceTree = "<group>"; };
 		74D784CA24A40C4600F78ACF /* IOS_Projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_Projekt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D784CD24A40C4600F78ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D784CF24A40C4600F78ACF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				74C789DC24AA37E600FDF430 /* TVCFavorites.swift */,
-				74C789E024AA84BF00FDF430 /* Fav.swift */,
+				01655F5D24AB0FAA003626A6 /* Defaults.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -218,7 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D784F824A42D5600F78ACF /* SensorsViewController.swift in Sources */,
-				74C789E124AA84BF00FDF430 /* Fav.swift in Sources */,
 				74D784EA24A4131000F78ACF /* TVCStations.swift in Sources */,
 				74D784FB24A4383000F78ACF /* SensorDataViewController.swift in Sources */,
 				74C789DF24AA396F00FDF430 /* FavViewController.swift in Sources */,
@@ -228,6 +227,7 @@
 				74D784EC24A4181700F78ACF /* AboutViewController.swift in Sources */,
 				74D784D224A40C4600F78ACF /* FirstViewController.swift in Sources */,
 				74D784F624A429F100F78ACF /* TVCSensors.swift in Sources */,
+				01655F5E24AB0FAA003626A6 /* Defaults.swift in Sources */,
 				74D784FF24A4398600F78ACF /* TVCSensorsData.swift in Sources */,
 				74D784CE24A40C4600F78ACF /* AppDelegate.swift in Sources */,
 				74C789DD24AA37E600FDF430 /* TVCFavorites.swift in Sources */,

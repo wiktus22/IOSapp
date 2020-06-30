@@ -1,9 +1,7 @@
+//  IOS_Projekt Jakość powietrza
+//  Politechnika Śląska 2020
 //
-//  SceneDelegate.swift
-//  IOS_Projekt
-//
-//  Created by Wiktor Zawadzki on 25/06/2020.
-//  Copyright © 2020 Wiktor Zawadzki. All rights reserved.
+//  Copyright © 2020 Maksymilian Wojciech, Wiktor Zawadzki. All rights reserved.
 //
 
 import UIKit
